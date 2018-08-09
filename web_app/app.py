@@ -2,12 +2,14 @@ from flask import Flask, render_template, request
 import sys
 import sqlite3
 
-DB_LOCATION = '/Users/garychen/Documents/GitHub/motion_aware/web_app/db/motion_aware.db'
 app = Flask(__name__)
+DB_LOCATION = app.root_path + '/db/motion_aware.db'
+
+
 
 @app.route("/")
 def main():
-
+    print(app.root_path, file = sys.stderr)
     return render_template('sign_in.html')
 
 
