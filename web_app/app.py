@@ -9,7 +9,7 @@ DB_LOCATION = app.root_path + '/db/motion_aware.db'
 
 @app.route("/")
 def main():
-    print(app.root_path, file = sys.stderr)
+    #print(app.root_path, file = sys.stderr)
     return render_template('sign_in.html')
 
 
