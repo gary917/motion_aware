@@ -1,0 +1,4 @@
+remote=/Users/garychen/.aos/remote
+os_path=/Users/garychen/.aos/AliOS-Things
+program_path=/Users/garychen/Documents/GitHub/motion_aware/iot
+path_type=program

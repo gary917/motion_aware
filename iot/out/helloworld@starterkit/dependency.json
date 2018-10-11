@@ -1,0 +1,65 @@
+{
+    "armv7m": [], 
+    "atparser": [], 
+    "auto_component": [], 
+    "cli": [
+        "hal"
+    ], 
+    "device_sal_bk7231": [
+        "yloop", 
+        "sal", 
+        "atparser"
+    ], 
+    "digest_algorithm": [], 
+    "hal": [], 
+    "helloworld": [
+        "yloop", 
+        "cli"
+    ], 
+    "kernel_init": [], 
+    "kv": [
+        "log"
+    ], 
+    "log": [], 
+    "newlib_stub": [], 
+    "rhino": [
+        "rhino"
+    ], 
+    "sal": [
+        "sal.wifi.bk7231"
+    ], 
+    "sensor": [], 
+    "starterkit": [
+        "sensor", 
+        "sal", 
+        "sensor", 
+        "sal"
+    ], 
+    "stm32l4xx_cube": [
+        "platform/arch/arm/armv7m", 
+        "libc", 
+        "rhino", 
+        "hal", 
+        "vfs", 
+        "digest_algorithm", 
+        "kernel.modules.fs.kv", 
+        "platform/arch/arm/armv7m", 
+        "libc", 
+        "rhino", 
+        "hal", 
+        "vfs", 
+        "digest_algorithm", 
+        "kernel.modules.fs.kv"
+    ], 
+    "vcall": [
+        "rhino"
+    ], 
+    "vfs": [
+        "kernel.vfs.device"
+    ], 
+    "vfs_device": [], 
+    "yloop": [
+        "log", 
+        "vfs"
+    ]
+}

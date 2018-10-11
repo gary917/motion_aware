@@ -1,0 +1,24 @@
+{
+    "aliosStudio.inner.yosBin": "aos", 
+    "aliosStudio.flashAllBin": false, 
+    "aliosStudio.build.multiBinTarget": "app", 
+    "aliosStudio.name": "helloworld", 
+    "aliosStudio.hardware.board": "starterkit", 
+    "aliosStudio.build.multiBin": false, 
+    "aliosStudio.buildList": [
+        {
+            "name": "clean"
+        }, 
+        {
+            "name": "helloworld@starterkit"
+        }, 
+        {
+            "name": "starterkitgui@starterkit"
+        }, 
+        {
+            "name": "mqttapp@starterkit"
+        }
+    ], 
+    "aliosStudio.isAosSource": false,
+    "aliosStudio.sdkPath": "/Users/garychen/.aos/AliOS-Things"
+}
