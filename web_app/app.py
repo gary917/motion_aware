@@ -20,7 +20,7 @@ table_name = 'flask_table'
 
 
 @app.route("/") #renders the main page
-def put_data():
+def put_data_1():
     ots_client = OTSClient(instanceURL, ACCESS_ID, ACCESS_SECRET, instanceName) #start the client 
     post_data = request.get_json()
     time_stamp = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
