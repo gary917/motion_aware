@@ -13,7 +13,7 @@ instanceURL = 'https://motionaware1.ap-southeast-1.ots.aliyuncs.com'
 instanceName = 'motionaware1'
 ACCESS_ID = 'LTAIksTHrtzmykKw'
 ACCESS_SECRET = 'DAq4jhEONrAASzh1QXqoqmECMcpGKA'
-table_name = 'flask_table'
+table_name = 'flask_table_1'
 
 #credentials to table store
 
@@ -88,7 +88,7 @@ def put_data():
         attribute_columns.append(entry)
 
 
-    primary_key = [('time_stamp',time_stamp), ('id',3), ('device_name','PLACEHOLDER' )]
+    primary_key = [('device_name','PLACEHOLDER' ),('id',1),('time_stamp',time_stamp),]
     row = Row(primary_key,attribute_columns)
     condition = Condition(RowExistenceExpectation.EXPECT_NOT_EXIST)
 
