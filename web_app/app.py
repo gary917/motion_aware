@@ -19,7 +19,7 @@ table_name = 'flask_table'
 
 
 
-@app.route("") #renders the main page
+@app.route("/") #renders the main page
 def put_data():
     ots_client = OTSClient(instanceURL, ACCESS_ID, ACCESS_SECRET, instanceName) #start the client 
     post_data = request.get_json()

@@ -9,12 +9,6 @@ ACCESS_SECRET = 'DAq4jhEONrAASzh1QXqoqmECMcpGKA'
 table_name = 'flask_table'
 
 
-db_config = {
-    'user': 'admin_1',
-    'password' : 'Motionaware1',
-    'host': 'rm-j0bz21fg6h05n786lro.mysql.australia.rds.aliyuncs.com',
-    'database' : 'motion_aware_apsara'
-}
 
 
 ots_client = OTSClient(instanceURL, ACCESS_ID, ACCESS_SECRET, instanceName) #start the client 
