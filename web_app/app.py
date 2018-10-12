@@ -81,15 +81,14 @@ def put_data():
     ots_client = OTSClient(instanceURL, ACCESS_ID, ACCESS_SECRET, instanceName) #start the client 
     post_data = request.get_json()
     time_stamp = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
-    acc_x = post_data['acceleration_x']
-    acc_y = post_data['acceleration_y']
-    acc_z = post_data['acceleration_z']
+
+    attribute_columns = []
+    for key, value in post_data.items():
+        entry = [key,value]
+        attribute_columns.append(entry)
 
 
-
-    #construct the data to send
     primary_key = [('time_stamp',time_stamp), ('id',3), ('device_name','PLACEHOLDER' )]
-    attribute_columns = [('acc_x', acc_x)]
     row = Row(primary_key,attribute_columns)
     condition = Condition(RowExistenceExpectation.EXPECT_NOT_EXIST)
 
