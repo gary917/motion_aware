@@ -2,8 +2,6 @@
 
 from flask import Flask, render_template, request
 import sys
-import sqlite3
-import mysql.connector
 import datetime
 from tablestore import *
 
