@@ -90,10 +90,13 @@ def put_data1():
 
 @app.route('/testing', methods = ['PUT'])
 def checking():
-    print("PACKET RECEIVED")
+    time_stamp = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
 
+    print("PACKET RECEIVED", time_stamp)
+
+    return "DONE"
 if __name__ == "__main__":
-	app.run(host = '0.0.0.0')
+	app.run(host = '0.0.0.0', threaded=True)
 
 
 
