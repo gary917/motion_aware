@@ -90,7 +90,7 @@ def put_data1():
 
 @app.route('/testing', methods = ['PUT'])
 def checking():
-    time_stamp = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
+    time_stamp = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S:%f')
 
     print("PACKET RECEIVED", time_stamp)
 
