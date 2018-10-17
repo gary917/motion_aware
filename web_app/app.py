@@ -47,7 +47,7 @@ def send_sms(phone_numbers, external_id, content_code, content_param=None):
 
 def sms_func():
     params={"name":"device1"}
-    print(send_sms("61452637668", "E0012033", "SMS_10195048", params))
+    send_sms("61452637668", "E0012033", "SMS_10195048", params)
 
 
 
@@ -87,6 +87,10 @@ def put_data1():
             e.get_error_code(), e.get_error_message(), e.get_request_id()))
 
     return "DATA ADDED to RSSI TABLE SUCCESSFULLY"
+
+@app.route('/testing', methods = ['PUT'])
+def checking():
+    print("PACKET RECEIVED")
 
 if __name__ == "__main__":
 	app.run(host = '0.0.0.0')
