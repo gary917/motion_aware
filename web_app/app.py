@@ -16,6 +16,7 @@ instanceName = 'motionaware1'
 ACCESS_ID = 'LTAIksTHrtzmykKw'
 ACCESS_SECRET = 'DAq4jhEONrAASzh1QXqoqmECMcpGKA'
 table_name_2 = 'flask_rssi_table'
+table_name_1 = 'flask_rss_table1'
 
 # Notice: Do NOT change
 REGION = "ap-southeast-1"
@@ -54,7 +55,7 @@ def sms_func():
 def put_data1():
     ots_client = OTSClient(instanceURL, ACCESS_ID, ACCESS_SECRET, instanceName)
     post_data = request.get_json()
-    time_stamp = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
+    #time_stamp = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
 
     gateway_name = post_data['gateway_name']
     device_name = post_data['device_name']
@@ -66,7 +67,7 @@ def put_data1():
     del post_data['data_type']
 
 
-    primary_key = [('time_stamp',time_stamp), ('gateway_name', gateway_name), ('device_name', device_name), ('data_type',data_type)]
+    primary_key = [('data_type',data_type), ('gateway_name', gateway_name), ('device_name', device_name), ('id', PK_AUTO_INCR)]
 
     attribute_columns = [] # loop to add attribute columns
     for key, value in post_data.items():
@@ -74,10 +75,10 @@ def put_data1():
         attribute_columns.append(entry)
 
     row = Row(primary_key,attribute_columns)
-    condition = Condition(RowExistenceExpectation.EXPECT_NOT_EXIST)
+    condition = Condition(RowExistenceExpectation.IGNORE)
 
     try:
-        consumed, return_row = ots_client.put_row(table_name_2, row, condition)
+        consumed, return_row = ots_client.put_row(table_name_1, row, condition)
         print ('put row succeed, consume %s write cu.' % consumed.write)
     except OTSClientError as e:
         print ("put row failed, http_status:%d, error_message:%s" % (e.get_http_status(), e.get_error_message()))
