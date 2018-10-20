@@ -45,9 +45,32 @@ def send_sms(phone_numbers, external_id, content_code, content_param=None):
     # TODO Business Logic
     return smsResponse
 
+def query_send_detail(biz_id, phone_number, page_size, current_page, start_date, end_date):
+    queryRequest = QuerySendDetailsRequest.QuerySendDetailsRequest()
+    # PhoneNumbers，Target Phone Number, Mandatory
+    queryRequest.set_PhoneNumber(phone_number)
+    # BizId, Unique identify serial number of SMS sending request, Optional
+    queryRequest.set_BizId(biz_id)
+    # EndDate, Mandatory
+    queryRequest.set_EndDate(end_date)
+    # Current Page
+    queryRequest.set_CurrentPage(current_page)
+    # Page Size
+    queryRequest.set_PageSize(page_size)
+    # Start Date for SMS Sending, Mandatory
+    queryRequest.set_StartDate(start_date)
+    # Method for Data submit
+    # queryRequest.set_method(MT.POST)
+    # Format for Data submit
+    # queryRequest.set_accept_format(FT.JSON)
+    # Calling SMS Status Query API, return json
+    queryResponse = acs_client.do_action_with_exception(queryRequest)
+    # TODO Business Logic
+    return queryResponse
+
 def sms_func():
     params={"name":"device1"}
-    send_sms("61452637668", "E0012033", "SMS_10195048", params)
+    print(send_sms("61452637668", "E0012033", "SMS_10195048", params))
 
 
 
